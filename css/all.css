@@ -1,0 +1,25 @@
+/*整体*/
+body{background: url("../img/bc.png");}
+/*滚动条*/
+/*整体*/::-webkit-scrollbar              {background: none;}
+/*两端按钮*/::-webkit-scrollbar-button       { background: url("../img/bc.png");border:2px solid #000}
+/*外层轨道*/::-webkit-scrollbar-track        { background: url("../img/bc.png");}
+/*内层轨道*/::-webkit-scrollbar-track-piece  { box-shadow: 0 0 10px 6px #000 inset;}
+/*拖动部分*/::-webkit-scrollbar-thumb        {  background: url("../img/bc.png");border:2px solid #000}
+/*边角*/::-webkit-scrollbar-corner       { /* 6 */ }
+/*拖动块*/::-webkit-resizer                { /* 7 */ }
+.row{margin:0;padding:0;}
+i{font-style: normal;}
+/*导航栏*/
+.navbar{border-radius: 0;margin:0;background: url("../img/bc.png");box-shadow: 0 0 10px 4px #000;}
+.navbar-brand{padding: 10px;}
+.navbar-header img{width:50px;}
+
+/*内容*/
+article{}
+.article{min-height: 500px;}
+/*底部*/
+footer{box-shadow: 0 0 10px 4px #000;margin-top: 20px;padding-bottom: 50px;}
+footer>div{height:50px;line-height: 50px;color:#fff}
+footer>div a{color:#fff;}
+footer>div a:hover{text-decoration:none;color:#fff}

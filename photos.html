@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>欢迎查看相册</title>
+    <link rel="stylesheet" href="css/global.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="swiper/swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="swiper/swiper-3.3.1.jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <style>
+        article{margin-top:50px;}
+        /*目录*/
+        .directory{box-shadow: 0 0 10px 4px #000;margin-bottom: 30px; }
+        .directory li{line-height: 30px;color:#fff;}
+        .directory li:hover{color:#ccc}
+        .directory .active{box-shadow: 0 0 10px 4px #000 inset;border-radius:5px;padding:3px;}
+        /*相册*/
+        .photos{}
+        .photos li{padding:0;}
+        .photos li>div{margin:0 10px 0 10px;}
+        .photos li>div img{width:100%;box-shadow: 0 0 10px 4px #000;}
+        .photos li>p{margin:0 10px 0 10px;line-height:30px;text-align: center;color:#fff;}
+    </style>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-default navbar-inverse " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="img/logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">画作</a></li>
+                <li><a href="#">书法</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">客服</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">莫小龙 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">账号设置</a></li>
+                        <li><a href="#">上传作品</a></li>
+                        <li><a href="#">收藏</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<article class=" col-md-10  article col-md-offset-1" >
+    <ul class="row directory">
+        <li class="col-md-1 col-sm-1 col-xs-1 "><i class="active">书法</i></li>
+        <li class="col-md-1 col-sm-1 col-xs-1"><i>绘画</i></li>
+    </ul>
+    <ul class="row photos">
+        <li class="col-md-3 col-sm-4 col-xs-6"><div><img src="img/aa1.jpg" alt=""/></div><p>书法</p></li>
+    </ul>
+    <ul class="row directory">
+        <li class="col-md-1 col-sm-1 col-xs-1 "><i class="active">书法</i></li>
+        <li class="col-md-1 col-sm-1 col-xs-1"><i>绘画</i></li>
+    </ul>
+</article>
+<footer class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
+        <span class="col-md-6">作者李帅拥有本产品著作权</span>
+        <nav class="col-md-6 ">
+            <a class="col-md-3" href="#">公司简介</a>
+            <a class="col-md-3" href="#">联系我们</a>
+            <a class="col-md-3" href="#">公司荣誉</a>
+            <a class="col-md-3" href="#">用户协议</a>
+        </nav>
+    </div>
+</footer>
+
+<script id="photos-text" type="text/html">
+    {{each photo as value i}}
+    <li class="col-md-3 col-sm-4 col-xs-6"><div><img src="{{value.url}}" alt=""/></div><p>{{value.tit}}</p></li>
+    {{/each}}
+</script>
+<script>
+    $(function () {
+        var data2={
+            photo:[{tit:'书法',url:'img/aa1.jpg'},
+                {tit:'书法',url:'img/aa2.jpg'},
+                {tit:'书法',url:'img/aa3.jpg'},
+                {tit:'书法',url:'img/aa1.jpg'},
+                {tit:'书法',url:'img/aa2.jpg'},
+                {tit:'书法',url:'img/aa3.jpg'},
+                {tit:'书法',url:'img/aa2.jpg'},
+                {tit:'书法',url:'img/aa1.jpg'}
+            ]}
+        var html = template('photos-text', data2);
+        $(".photos").html(html);
+    })
+
+</script>
+
+</body>
+</html>
